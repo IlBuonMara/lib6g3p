@@ -1,6 +1,4 @@
 #include "lib6g3p.h"
-#include <stdio.h>
-#include <stdlib.h>
 #include "mcc_generated_files/mcc.h"
 #define Display PORTB
 

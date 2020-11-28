@@ -49,10 +49,6 @@
                          Main application
  */
 
-char s;
-char c=0;
-char i=0;
-
 void main(void)
 {
     Display=0b00000000;
@@ -62,52 +58,29 @@ void main(void)
 
     while (1)
     {
-        if(IO_RA3_GetValue()==1)
+        if(IO_RA2_GetValue()==1 && IO_RA3_GetValue()==1 && IO_RA4_GetValue()==1)
         {
-            c=0;
-            Display=0b00000000;
-            
+            Display=0b00000000;  
         }
-        if(IO_RA2_GetValue()==1 && c<4)
-        {
-            c++;  //se premo il Puls1 incremento il valore di c
+        else if(IO_RA2_GetValue()==1 && IO_RA3_GetValue()==0 && IO_RA4_GetValue()==0){
+            PalleR();
         }
-        if(c==1)
-        {
-            Supercar();  //se c e' uguale a 1 esegui la funzione Supercar
+        else if(IO_RA2_GetValue()==0 && IO_RA3_GetValue()==1 && IO_RA4_GetValue()==0){
+            Supercar();
         }
-        if(c==2)
-        {
-            PalleR();  //se c e' uguale a 2 esegui la funzione PalleR
+        else if(IO_RA2_GetValue()==0 && IO_RA3_GetValue()==0 && IO_RA4_GetValue()==1){
+            PariDispari();
         }
-        if(c==3)
-        {
-            PariDispari();  //se c e' uguale a 3 esegui la funzione PariDispari
+        else if(IO_RA2_GetValue()==1 && IO_RA3_GetValue()==1 && IO_RA4_GetValue()==0){
+            LampSfas ();
         }
-        if(c==4)
-        {
-            c=0;  //se c e' uguale a 4 imposta c uguale a 0
+        else if(IO_RA2_GetValue()==1 && IO_RA3_GetValue()==0 && IO_RA4_GetValue()==1){
+            QuattroQuarti();
         }
-        if(IO_RA4_GetValue()==1)
-        {
-            i++;
+        else if(IO_RA2_GetValue()==0 && IO_RA3_GetValue()==1 && IO_RA4_GetValue()==1){
+            Caricamento();
         }
-        if(i==1)
-        {
-             QuattroQuarti();
-        }
-        if(i==2)
-        {
-             Caricamento();
-        }
-        if(i==3)
-        {
-            LampSfas();
-        }
-        if(i==4)
-        {
-            i=0;
-        }
+        
     }
 }
 /**

@@ -9,7 +9,6 @@
 #ifndef LIB6G3P_H
 #define	LIB6G3P_H
 
-#include "mcc_generated_files/mcc.h"
 
 #ifdef	__cplusplus
 extern "C" {
@@ -17,13 +16,11 @@ extern "C" {
 #ifdef	__cplusplus
 }
 #endif
-
 extern void PalleR();  
 extern void Supercar();
 extern void PariDispari();
 extern void LampSfas ();
 extern void QuattroQuarti();
 extern void Caricamento();
-
 #endif	/* LIB6G3P_H */
 
